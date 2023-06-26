@@ -1,0 +1,65 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <br><br><br><br><br><br>
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <h4 class="login-box-msg">Connecting people, sharing stories and inspiring lifes</h4>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6 p3" >
+                        <img class="img-fluid" src="{% static 'moti.jpg' %}">
+                    </div>
+                    <div class="col-lg-6 p3" >
+                
+                <div>
+                    <center>
+                    <img class="img-fluid" height="30%" width="30%" src="{% static 'im.png'%}" >
+                    <p><h4>Login</h4></p>
+                    <center>
+                </div>
+                <form  method="post" >
+                    {% csrf_token %}
+                  
+                    <div class="input-group mb-3">
+                        <input required type="email" name='email' class="form-control" style="width: 20%;" placeholder="Email">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <input required type="password" name='password' class="form-control" style="width: 20px;" placeholder="Password">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-lock"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <center>
+                        <!-- /.col -->
+                        
+                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                        
+                            <a  href="{% url 'signup' %}">I don't have an account, SignUp</a>
+                        
+
+
+                        <!-- /.col -->
+                    </center>
+                </form>
+            </div>
+
+            </div >
+
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+
+{% endblock content %}

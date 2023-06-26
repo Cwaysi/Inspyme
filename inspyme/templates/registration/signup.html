@@ -1,0 +1,23 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+            <!-- general form elements -->
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Signup Page</h3>
+                    
+                </div>
+
+                
+                <form method="post" enctype='multipart/form-data' style="margin: 10px; padding: 2px;">
+                    {% csrf_token %}    
+                 {{form.as_p}}
+                 <button type="submit" class="btn btn-success btn-block">Sign Up</button>
+                </form>
+            </div>
+            <!-- /.card -->
+
+
+        </div>
+{% endblock content %}
