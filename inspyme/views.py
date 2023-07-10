@@ -93,6 +93,7 @@ def signup(request):
     context = {'form': form}
     if request.method == 'POST':
         if form.is_valid():
+            # get details from the forms is form is valid
             email = form.cleaned_data.get('email')
             password = form.cleaned_data.get('password')
             picture = form.cleaned_data.get('picture_pic')
@@ -112,6 +113,7 @@ def signup(request):
             return redirect(reverse('login_page'))
     return render(request, 'registration/signup.html', context)
 
+# Adding story
 @login_required
 def addstory(request):
     if request.method == 'POST':
@@ -120,7 +122,7 @@ def addstory(request):
             story = form.save(commit=False)
             story.author = request.user  # Assigning the current user as the author
             story.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('home'))# Return back to home page
     else:
         form = StoryForm(initial={'author': request.user})  # Setting the initial value for the author field
     
@@ -130,6 +132,7 @@ def addstory(request):
     
     return render(request, 'addstory.html', context)
 
+#Adding comments to a particular story
 @login_required
 def addcomment(request, id):
     post = Story.objects.get(id=id)  # Use get() instead of filter() to retrieve a single object
@@ -140,7 +143,7 @@ def addcomment(request, id):
             comment.author = request.user  # Assign the current user as the author
             comment.story = post  # Assign the story object to the comment
             comment.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('home')) # Return back to home page
         else:
             print(form.errors)
     else:
@@ -152,27 +155,30 @@ def addcomment(request, id):
     
     return render(request, 'addcomment.html', context)
 
+#deleting a comment related to a story
 @login_required
 def deletecomment(request, id):
-    comment = get_object_or_404(Comment, id=id)
+    comment = get_object_or_404(Comment, id=id) # Get the actual comment being deleted
     try:
         comment.delete()
     except IntegrityError as e:
         print("Error, Integrity", e)
-    return redirect(reverse('home'))
+    return redirect(reverse('home')) # Return back to home page
 
+#deleting a story
 @login_required
 def deletestory(request, id):
-    story = get_object_or_404(Story, id=id)
+    story = get_object_or_404(Story, id=id) # Get the actual story being deleted
     try:
         story.delete()
     except IntegrityError as e:
         print("Error, Integrity", e)
     return redirect(reverse('home'))
 
+#editting a story
 @login_required
 def editstory(request, id):
-    story = get_object_or_404(Story, id=id, author=request.user)
+    story = get_object_or_404(Story, id=id, author=request.user) # Get the actual story being edited
     form = StoryForm(request.POST or None, instance=story)
     context = {
         'form': form,
@@ -180,11 +186,11 @@ def editstory(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('home')) # Return back to home page
     
     return render(request, 'editstory.html', context)
 
-
+#editting a story
 @login_required
 def editcomment(request, id):
     comment = get_object_or_404(Comment, id=id, author=request.user) #get the actual comment for the editing
@@ -195,20 +201,25 @@ def editcomment(request, id):
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('home')) # Return back to home page
     
     return render(request, 'editcomment.html', context)
 
+#function to edit user account
 @login_required
 def editaccount(request, id):
     usr = get_object_or_404(CustomUser, id=id) #get the actual user's account for editing
-    form = CustomUserForm(request.POST or None, instance=usr, initial={'password': " "})
+    form = CustomUserForm(request.POST or None, instance=usr, initial={'password': " "}) #preparing the userform with initial user details
     context = {
         'form': form,
     }
     if request.method == 'POST':
         if form.is_valid():
             form.save()
-            return redirect(reverse('home'))
+            return redirect(reverse('home')) # Return back to home page
     
     return render(request, 'editaccount.html', context)
+
+@login_required
+def help(request):
+    return render(request, 'help.html')

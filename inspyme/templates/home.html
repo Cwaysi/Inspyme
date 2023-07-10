@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 {% load static %}
 {% block content %}
+
 <div class="container">
   
 </div>
@@ -21,6 +22,8 @@
           <button class='btn btn-warning' style='margin-top: 4px' type="submit"><i class="fa fa-search"></i>Search</button></div>
         </form>
       </div>
+      
+      
       <br>
       {% for story in stories %}
         <div class="card">
@@ -87,4 +90,5 @@
     </div>
   </div>
 </div>
+
 {% endblock content %}

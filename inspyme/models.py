@@ -4,6 +4,7 @@ from datetime import date, datetime
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth.models import UserManager
 
+
 # user manager
 class CustomUserManager(UserManager):
     def _create_user(self, email, password, **extra_fields):
@@ -39,11 +40,17 @@ class CustomUser(AbstractUser):
     USERNAME_FIELD = "email" #make email the user entry field
     REQUIRED_FIELDS = []
     object = CustomUserManager() #call the user manager to save user
-
     def __str__(self):
         #string representation of the user model, lastname and firstname
         return self.last_name + ", " + self.first_name
-    
+
+#Chat model for the help aspect
+# class Chat(models.Model):
+#     sender = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='sent_chats')
+#     recipient = models.ForeignKey(CustomUser, on_delete=models.CASCADE, related_name='received_chats')
+#     timestamp = models.DateTimeField(auto_now_add=True)
+#     message = models.TextField()
+   
     
 #Class model to save all stories
 class Story(models.Model):
@@ -68,3 +75,4 @@ class Comment(models.Model):
     def __str__(self):
         #string representation of the model, the tag, author name and date
         return str(self.story.tag) + " " + str(self.author.first_name) + " " + str(self.date_posted)
+    

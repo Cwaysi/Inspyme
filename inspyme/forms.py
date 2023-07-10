@@ -78,3 +78,4 @@ class CommentForm(FormSettings):
         super().__init__(*args, **kwargs)
         self.fields["author"].widget = forms.HiddenInput() #hide the author field and auto add the current user in view
         self.fields["story"].widget = forms.HiddenInput() #hide the story field and auto add the actual story in view
+        

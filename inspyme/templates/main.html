@@ -37,7 +37,7 @@ $(document).ready(function() {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" {% if user.is_authenticated %} href="{% url 'home'%}" {% else %} href="{% url 'login_page'%}" {% endif %}><strong><span style="color: #EAC117;">INSPY</span>ME</strong></a>
+          <a class="navbar-brand" {% if user.is_authenticated %} href="{% url 'home'%}" {% else %} href="{% url 'login_page'%}" {% endif %}><strong><span style="color: #EAC117;"><i class="fa-solid fa-bulb"></i> INSPY</span>ME</strong></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -63,7 +63,8 @@ $(document).ready(function() {
               </li>
               {% endif %}
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fa-sharp fa-solid fa-question"></i> Help</a>
+                {% url 'help' as help %}
+                <a class="nav-link {% if help == request.path %} active {% endif %}" href="{% url 'help' %}"><i class="fa-sharp fa-solid fa-question"></i> Help</a>
               </li>
               
               {% if user.is_authenticated %}
