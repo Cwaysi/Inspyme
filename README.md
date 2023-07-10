@@ -1,6 +1,6 @@
 # Inspyme Project
 
-![Inspyme Project](donehome.JPG)
+![Inspyme Project](screenshots/donehome.JPG)
 
 ## Introduction
 The Inspyme project is a platform that allows individuals to share their personal stories anonymously and seek help from a supportive community. It provides a safe space for people to open up, find support, and connect with others who can offer empathy and assistance. This README.md file contains information about the project, including installation instructions, usage guidelines, and links to related resources.
@@ -58,10 +58,10 @@ I also plan to focus on optimizing the performance and scalability of the applic
 ## Screenshots and Visuals
 Here are some screenshots showcasing the Inspyme project:
 
-![Add Story](doneAddstory.JPG)
+![Add Story](screenshots/doneAddstory.JPG)
 *Users can share their stories and seek support.*
 
-![Login](donelogin.JPG)
+![Login](screenshots/donelogin.JPG)
 *The comment feature allows users to engage and provide assistance.*
 
 
