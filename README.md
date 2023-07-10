@@ -62,7 +62,7 @@ Here are some screenshots showcasing the Inspyme project:
 *Users can share their stories and seek support.*
 
 ![Login](screenshots/donelogin.JPG)
-*The comment feature allows users to engage and provide assistance.*
+*The login interface.*
 
 
 
