@@ -1,6 +1,6 @@
 # Inspyme Project
 
-![Inspyme Project](screenshot.png)
+![Inspyme Project](donehome.JPG)
 
 ## Introduction
 The Inspyme project is a platform that allows individuals to share their personal stories anonymously and seek help from a supportive community. It provides a safe space for people to open up, find support, and connect with others who can offer empathy and assistance. This README.md file contains information about the project, including installation instructions, usage guidelines, and links to related resources.
@@ -18,7 +18,7 @@ To set up the Inspyme project locally, follow these steps:
 2. make sure your virtual environment is activated
 3. Navigate to the project directory: `cd portfolioproject`
 4. Run server: `python manage.py runserver`
-6. Access the application at `http://localhost:8000`
+6. Access the application at `http://127.0.0.1:8000`
 
 ## Usage
 Once the Inspyme project is installed and running, users can perform the following actions:
@@ -58,10 +58,10 @@ I also plan to focus on optimizing the performance and scalability of the applic
 ## Screenshots and Visuals
 Here are some screenshots showcasing the Inspyme project:
 
-![Screenshot 1](screenshot1.png)
+![Add Story](doneAddstory.JPG)
 *Users can share their stories and seek support.*
 
-![Screenshot 2](screenshot2.png)
+![Login](donelogin.JPG)
 *The comment feature allows users to engage and provide assistance.*
 
 
