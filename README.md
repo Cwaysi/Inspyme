@@ -8,8 +8,8 @@ The Inspyme project is a platform that allows individuals to share their persona
 ### Links
 - Deployed Site: Not yet
 - Final Project Blog Article: [Inspyme Project Blog](https://medium.com/@cwaysimorison/inspyme-journey-522746db1094)
-- Author(s) LinkedIn:
-  - Justice Morison Gurah (https://www.linkedin.com/in/justice-morison-b53b2a245)
+- Author LinkedIn:
+  - [Justice Morison Gurah] (https://www.linkedin.com/in/justice-morison-b53b2a245)
 
 ## Installation
 To set up the Inspyme project locally, follow these steps:
